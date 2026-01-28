@@ -199,11 +199,11 @@
   },
   {
     "id": 13,
-    "name": "Arroz / Cereales (Crudo)",
-    "p": 7.0,
-    "c": 78.0,
-    "f": 1.0,
-    "kcal": 360,
+    "name": "Arroz / Cereales (Cocido)",
+    "p": 2.3,
+    "c": 26.0,
+    "f": 0.3,
+    "kcal": 120,
     "unit": "g",
     "fam": "CARBS",
     "sub": "PASTA_RICE"
@@ -339,5 +339,16 @@
   "unit": "g", 
   "fam": "PROTEIN", 
   "sub": "MEAT_RED" 
-}
+  },
+  { 
+  "id": 35, 
+  "name": "Tomate Cherry (Unidad)", 
+  "p": 0.12, 
+  "c": 0.42, 
+  "f": 0.02, 
+  "kcal": 2.5, 
+  "unit": "u", 
+  "fam": "VEG", 
+  "sub": "COLOR" 
+  }
 ]
