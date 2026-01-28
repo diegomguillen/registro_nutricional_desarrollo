@@ -208,16 +208,16 @@
     "fam": "CARBS",
     "sub": "PASTA_RICE"
   },
-  {
-    "id": 15,
-    "name": "Pasta Trigo (Crudo)",
-    "p": 12.0,
-    "c": 70.0,
-    "f": 1.5,
-    "kcal": 350,
-    "unit": "g",
-    "fam": "CARBS",
-    "sub": "PASTA_RICE"
+  { 
+  "id": 15, 
+  "name": "Pasta Trigo (Cocido)", 
+  "p": 4.8, 
+  "c": 28.0, 
+  "f": 0.6, 
+  "kcal": 140, 
+  "unit": "g", 
+  "fam": "CARBS", 
+  "sub": "PASTA_RICE" 
   },
   {
     "id": 14,
@@ -230,16 +230,16 @@
     "fam": "CARBS",
     "sub": "BREAD"
   },
-  {
-    "id": 23,
-    "name": "Patata / Batata (Crudo)",
-    "p": 2.0,
-    "c": 18.0,
-    "f": 0.1,
-    "kcal": 85,
-    "unit": "g",
-    "fam": "CARBS",
-    "sub": "TUBER"
+  { 
+  "id": 23, 
+  "name": "Patata / Batata (Cocido)", 
+  "p": 1.9, 
+  "c": 19.0, 
+  "f": 0.1, 
+  "kcal": 84, 
+  "unit": "g", 
+  "fam": "CARBS", 
+  "sub": "TUBER" 
   },
   {
     "id": 22,
