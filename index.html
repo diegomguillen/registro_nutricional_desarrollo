@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NutriApp</title>
+    <title>NutriApp-DEV</title>
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -482,125 +482,7 @@
             closeActionModal();
             document.getElementById('recipeLogModal').classList.remove('hidden');
         }
-
-        // --- DATOS INICIALES ---
-        const FOOD_STRUCTURE = {
-            "PROTEIN": {
-                label: "Carnes, Pescados y Huevos",
-                icon: "🥩",
-                subs: {
-                    "MEAT_RED": { label: "Carnes Rojas / Procesados", icon: "🍖" },
-                    "MEAT_WHITE": { label: "Aves y Magras", icon: "🍗" },
-                    "FISH_WHITE": { label: "Pescado Blanco", icon: "🐟" },
-                    "FISH_BLUE": { label: "Pescado Azul", icon: "🍣" },
-                    "EGG": { label: "Huevos", icon: "🥚" }
-                }
-            },
-            "DAIRY": {
-                label: "Lácteos y Derivados",
-                icon: "🥛",
-                subs: {
-                    "CHEESE": { label: "Quesos", icon: "🧀" },
-                    "YOGURT": { label: "Yogures / Kéfir", icon: "🥣" },
-                    "MILK": { label: "Leche Líquida", icon: "🥛" }
-                }
-            },
-            "CARBS": {
-                label: "Cereales y Tubérculos",
-                icon: "🌾",
-                subs: {
-                    "PASTA_RICE": { label: "Pasta y Arroces", icon: "🍝" },
-                    "BREAD": { label: "Panes y Masas", icon: "🍞" },
-                    "TUBER": { label: "Patata y Batata", icon: "🥔" }
-                }
-            },
-            "LEGUME": {
-                label: "Legumbres",
-                icon: "🥘",
-                subs: {
-                    "DRY": { label: "Legumbre Seca", icon: "🫘" },
-                    "COOKED": { label: "Cocida / Bote", icon: "🥫" }
-                }
-            },
-            "VEG": {
-                label: "Verduras y Hortalizas",
-                icon: "🥦",
-                subs: {
-                    "GREEN": { label: "Hoja y Verde", icon: "🥬" },
-                    "COLOR": { label: "Frutos (Tomate/Pimiento)", icon: "🍅" }
-                }
-            },
-            "FRUIT": {
-                label: "Frutas",
-                icon: "🍎",
-                subs: {
-                    "FRESH": { label: "Fruta Fresca", icon: "🍇" }
-                }
-            },
-            "LIPID": {
-                label: "Grasas y Semillas",
-                icon: "🥑",
-                subs: {
-                    "OIL": { label: "Aceites", icon: "🫒" },
-                    "NUT": { label: "Frutos Secos", icon: "🥜" },
-                    "FRUIT_FAT": { label: "Aguacate / Coco", icon: "🥥" }
-                }
-            },
-            "PURE": {
-                label: "Macros Puros (Calibración)",
-                icon: "🧪",
-                subs: {
-                    "P_PROT": { label: "Proteína Pura", icon: "💪" },
-                    "P_CARB": { label: "Carbohidrato Puro", icon: "⚡" },
-                    "P_FAT": { label: "Grasa Pura", icon: "💧" }
-                }
-            }
-        };        
-        let foodData = [
-            // --- MACROS PUROS ---
-            { id: 19, name: "Proteína Aislada (Whey/Iso)", p: 90.0, c: 2.0, f: 1.0, kcal: 380, unit: "g", fam: "PURE", sub: "P_PROT" },
-            { id: 20, name: "Dextrosa / Maltodextrina", p: 0.0, c: 100.0, f: 0.0, kcal: 400, unit: "g", fam: "PURE", sub: "P_CARB" },
-            { id: 21, name: "Grasa Pura (MCT / Aceite)", p: 0.0, c: 0.0, f: 100.0, kcal: 900, unit: "g", fam: "PURE", sub: "P_FAT" },
-
-            // --- GRASAS ---
-            { id: 2,  name: "Aceite de Oliva (AOVE)", p: 0.0, c: 0.0, f: 100.0, kcal: 900, unit: "g", fam: "LIPID", sub: "OIL" },
-            { id: 3,  name: "Aguacate", p: 2.0, c: 8.5, f: 15.0, kcal: 160, unit: "g", fam: "LIPID", sub: "FRUIT_FAT" },
-            { id: 4,  name: "Mix Frutos Secos", p: 20.0, c: 16.0, f: 50.0, kcal: 600, unit: "g", fam: "LIPID", sub: "NUT" },
-            { id: 25, name: "Nuez (Grano)", p: 15.0, c: 14.0, f: 65.0, kcal: 650, unit: "g", fam: "LIPID", sub: "NUT" }, // Convertido a g para estandarizar
-            { id: 24, name: "Aceituna", p: 0.8, c: 0.0, f: 15.0, kcal: 150, unit: "g", fam: "LIPID", sub: "FRUIT_FAT" },
-
-            // --- PROTEINAS ANIMALES ---
-            { id: 5,  name: "Pechuga Pollo/Pavo", p: 23.0, c: 0.0, f: 1.5, kcal: 106, unit: "g", fam: "PROTEIN", sub: "MEAT_WHITE" },
-            { id: 6,  name: "Carne Roja (Ternera)", p: 20.0, c: 0.0, f: 10.0, kcal: 170, unit: "g", fam: "PROTEIN", sub: "MEAT_RED" }, 
-            { id: 29, name: "Jamón Serrano (Sin grasa)", p: 30.0, c: 0.0, f: 8.0, kcal: 190, unit: "g", fam: "PROTEIN", sub: "MEAT_RED" },
-            { id: 10, name: "Pescado Blanco (Merluza/Bacalao)", p: 18.0, c: 0.0, f: 1.5, kcal: 85, unit: "g", fam: "PROTEIN", sub: "FISH_WHITE" },
-            { id: 11, name: "Pescado Azul (Salmón/Atún)", p: 20.0, c: 0.0, f: 12.0, kcal: 190, unit: "g", fam: "PROTEIN", sub: "FISH_BLUE" },
-            { id: 12, name: "Huevo (Clase L ~60g)", p: 7, c: 0.3, f: 5.8, kcal: 80, unit: "u", fam: "PROTEIN", sub: "EGG" }, 
- 
-            // --- LÁCTEOS ---
-            { id: 7,  name: "Queso Curado/Semicurado", p: 25.0, c: 1.0, f: 33.0, kcal: 400, unit: "g", fam: "DAIRY", sub: "CHEESE" },
-            { id: 9,  name: "Yogur Natural / Kéfir", p: 3.5, c: 4.5, f: 3.0, kcal: 60, unit: "g", fam: "DAIRY", sub: "YOGURT" },
-            { id: 8,  name: "Leche Semidesnatada", p: 3.4, c: 5.0, f: 1.6, kcal: 48, unit: "g", fam: "DAIRY", sub: "MILK" },
-            { id: 30, name: "Queso Fresco Batido / Skyr", p: 8.0, c: 3.5, f: 0.1, kcal: 46, unit: "g", fam: "DAIRY", sub: "YOGURT" },
-
-            // --- HIDRATOS Y TUBERCULOS ---
-            { id: 13, name: "Arroz / Cereales (Crudo)", p: 7.0, c: 78.0, f: 1.0, kcal: 360, unit: "g", fam: "CARBS", sub: "PASTA_RICE" },
-            { id: 15, name: "Pasta Trigo (Crudo)", p: 12.0, c: 70.0, f: 1.5, kcal: 350, unit: "g", fam: "CARBS", sub: "PASTA_RICE" },
-            { id: 14, name: "Pan Blanco / Integral", p: 9.0, c: 50.0, f: 2.0, kcal: 260, unit: "g", fam: "CARBS", sub: "BREAD" },
-            { id: 23, name: "Patata / Batata (Crudo)", p: 2.0, c: 18.0, f: 0.1, kcal: 85, unit: "g", fam: "CARBS", sub: "TUBER" },
-            { id: 22, name: "Ñoquis (Gnocchi)", p: 3.5, c: 36.0, f: 0.5, kcal: 165, unit: "g", fam: "CARBS", sub: "TUBER" },
-
-            // --- LEGUMBRES ---
-            { id: 18, name: "Legumbres Cocidas (Bote)", p: 7.0, c: 14.0, f: 0.5, kcal: 95, unit: "g", fam: "LEGUME", sub: "COOKED" },
-            { id: 31, name: "Legumbres Secas (Lenteja/Garbanzo)", p: 22.0, c: 55.0, f: 1.5, kcal: 330, unit: "g", fam: "LEGUME", sub: "DRY" },
-
-            // --- FRUTAS Y VERDURAS ---
-            { id: 16, name: "Fruta Variada (Genérica)", p: 0.5, c: 12.0, f: 0.2, kcal: 55, unit: "g", fam: "FRUIT", sub: "FRESH" },
-            { id: 28, name: "Manzana / Pera", p: 0.3, c: 12.0, f: 0.2, kcal: 52, unit: "g", fam: "FRUIT", sub: "FRESH" },
-            { id: 26, name: "Tomate / Pimiento", p: 1.0, c: 3.5, f: 0.2, kcal: 20, unit: "g", fam: "VEG", sub: "COLOR" },
-            { id: 17, name: "Verdura Hoja / Calabacín", p: 1.5, c: 3.0, f: 0.2, kcal: 25, unit: "g", fam: "VEG", sub: "GREEN" }
-        ];
-
+        //////////////
         let globalLog = []; 
         let recipeData = []; 
         let chartInstance = null;
@@ -679,7 +561,7 @@
                 }
             }
             //
-            loadData();
+            initApp();
             populateSelect();
             populateRecipeSelect();
             initDateInputs();
@@ -1309,18 +1191,71 @@
 
         // --- PERSISTENCIA ---
         function saveData() { localStorage.setItem('macroCalculatorData', JSON.stringify(globalLog)); }
-        function saveFoods() { localStorage.setItem('macroCalculatorFoods', JSON.stringify(foodData)); }
+        function saveFoods() {
+          // Solo guardamos en el móvil del usuario sus alimentos propios (IDs >= 1000)
+          // Los alimentos base (ID < 1000) NO se guardan, así siempre se leen del JSON.
+          const customFoods = foodData.filter(f => f.id >= 1000);
+          localStorage.setItem('macroCalculatorFoods', JSON.stringify(customFoods));
+        }
         function saveRecipes() { localStorage.setItem('macroCalculatorRecipes', JSON.stringify(recipeData)); }
         
-        function loadData() { 
-            const s = localStorage.getItem('macroCalculatorData'); 
-            if(s) globalLog = JSON.parse(s); 
+        
+        async function initApp() {
+            try {
+                // 1. Pedimos los archivos al servidor (GitHub Pages)
+                const [foodsRes, structRes] = await Promise.all([
+                    fetch('./foods.json'),
+                    fetch('./structure.json')
+                ]);
             
-            const f = localStorage.getItem('macroCalculatorFoods');
-            if(f) foodData = JSON.parse(f);
+                if (!foodsRes.ok || !structRes.ok) throw new Error("No se pudieron cargar los archivos JSON");
+            
+                const remoteFoods = await foodsRes.json();
+                FOOD_STRUCTURE = await structRes.json();
+            
+                // 2. Cargamos el historial y recetas del usuario (LocalStorage)
+                const historyData = localStorage.getItem('macroCalculatorData');
+                if(historyData) globalLog = JSON.parse(historyData);
+            
+                const recipesData = localStorage.getItem('macroCalculatorRecipes');
+                if(recipesData) recipeData = JSON.parse(recipesData);
+            
+                // 3. FUSIÓN INTELIGENTE: 
+                // Recuperamos alimentos guardados en el móvil, pero SOLO los personalizados (ID >= 1000).
+                // Los alimentos base (Pollo, Huevo, etc.) los ignoramos para usar siempre los del JSON actualizado.
+                const localFoodsRaw = localStorage.getItem('macroCalculatorFoods');
+                let userCustomFoods = [];
+            
+                if (localFoodsRaw) {
+                    const parsed = JSON.parse(localFoodsRaw);
+                    userCustomFoods = parsed.filter(f => f.id >= 1000); 
+                }
+            
+                // Combinamos: [Base de Datos Remota] + [Mis Alimentos Personalizados]
+                foodData = [...remoteFoods, ...userCustomFoods];
+            
+                // 4. Arrancamos la interfaz (Todo lo que antes hacías en el DOMContentLoaded)
+                initDateInputs();
+                populateSelect();
+                populateRecipeSelect();
+                applyFilter();
+                updateComparisonCharts();
+                updateLiveCounter();
 
-            const r = localStorage.getItem('macroCalculatorRecipes');
-            if(r) recipeData = JSON.parse(r);
+                // Activamos los "escuchadores" de cambios
+                document.getElementById('foodSelect').addEventListener('change', updatePreview);
+                document.getElementById('amountInput').addEventListener('input', updatePreview);
+                document.getElementById('recipeSelect').addEventListener('change', updateRecipePreview);
+                document.getElementById('recipeAmountInput').addEventListener('input', updateRecipePreview);
+            
+            } catch (error) {
+                console.error("Error iniciando la app:", error);
+                // Si falla (ej: sin internet y sin caché), intentamos cargar al menos lo local
+                showToast("Modo Offline: Usando datos locales disponibles.");
+                const f = localStorage.getItem('macroCalculatorFoods');
+                if(f) foodData = JSON.parse(f);
+                populateSelect();
+            }
         }
 
         async function exportData() {
@@ -1342,22 +1277,53 @@
         function handleImport(input) {
             const f = input.files[0]; if(!f) return;
             const r = new FileReader(); 
-            r.onload = e => { 
+            
+            // Hacemos la función async para poder llamar a initApp() al final
+            r.onload = async e => { 
                 try { 
                     const d = JSON.parse(e.target.result); 
+                    
+                    // Detectar si es un backup válido
                     if (d.history || d.foods || d.recipes) {
-                         if(confirm(`Backup encontrado.\n- ${d.history?.length||0} registros\n- ${d.foods?.length||0} alimentos\n- ${d.recipes?.length||0} recetas\n¿Restaurar?`)) {
-                            if(d.history) { globalLog = d.history; saveData(); }
-                            if(d.foods) { foodData = d.foods; saveFoods(); populateSelect(); }
-                            if(d.recipes) { recipeData = d.recipes; saveRecipes(); populateRecipeSelect(); }
-                            applyFilter();
-                            updateComparisonCharts();
-                            showToast("Restauración completa.");
+                         if(confirm(`Backup encontrado.\n- ${d.history?.length||0} registros\n- ${d.foods?.length||0} alimentos\n- ${d.recipes?.length||0} recetas\n¿Restaurar y actualizar formato?`)) {
+                            
+                            // 1. RESTAURAR HISTORIAL
+                            if(d.history) { 
+                                globalLog = d.history; 
+                                saveData(); // Guarda en localStorage
+                            }
+
+                            // 2. RESTAURAR ALIMENTOS (LÓGICA BLINDADA)
+                            if(d.foods) { 
+                                // TRUCO: Del backup, solo nos interesan los alimentos PERSONALIZADOS (ID >= 1000).
+                                // Los alimentos base (Pollo, Huevo, etc.) los ignoramos porque usaremos los nuevos del JSON con iconos.
+                                const customFoodsFromBackup = d.foods.filter(f => f.id >= 1000);
+                                
+                                // Guardamos en memoria local SOLO los personalizados
+                                localStorage.setItem('macroCalculatorFoods', JSON.stringify(customFoodsFromBackup));
+                            }
+
+                            // 3. RESTAURAR RECETAS
+                            if(d.recipes) { 
+                                recipeData = d.recipes; 
+                                saveRecipes(); 
+                            }
+
+                            // 4. REINICIAR LA APP (FUSIÓN)
+                            // Llamamos a initApp() para que vuelva a descargar el JSON base 
+                            // y lo mezcle limpiamente con los datos que acabamos de restaurar.
+                            await initApp(); 
+                            
+                            showToast("Datos restaurados y actualizados a la nueva versión.");
                         }
                     } else if(Array.isArray(d)) {
-                         globalLog = d; saveData(); applyFilter();
+                         // Soporte para backups muy antiguos (solo historial)
+                         globalLog = d; saveData(); await initApp();
                     }
-                } catch(err){ console.error(err); showToast("Error al leer archivo."); } 
+                } catch(err){ 
+                    console.error(err); 
+                    showToast("Error al leer archivo de copia de seguridad."); 
+                } 
                 input.value=''; 
             }; 
             r.readAsText(f);
