@@ -1,18 +1,18 @@
 [
   {
     "id": 19,
-    "name": "Proteína Aislada (Whey/Iso)",
-    "p": 90.0,
-    "c": 2.0,
-    "f": 1.0,
-    "kcal": 380,
+    "name": "Proteína",
+    "p": 100.0,
+    "c": 0.0,
+    "f": 0.0,
+    "kcal": 400,
     "unit": "g",
     "fam": "PURE",
     "sub": "P_PROT"
   },
   {
     "id": 20,
-    "name": "Dextrosa / Maltodextrina",
+    "name": "Carbohidrato",
     "p": 0.0,
     "c": 100.0,
     "f": 0.0,
@@ -23,7 +23,7 @@
   },
   {
     "id": 21,
-    "name": "Grasa Pura (MCT / Aceite)",
+    "name": "Grasa",
     "p": 0.0,
     "c": 0.0,
     "f": 100.0,
@@ -79,11 +79,11 @@
   {
     "id": 24,
     "name": "Aceituna",
-    "p": 0.8,
+    "p": 0.03,
     "c": 0.0,
-    "f": 15.0,
+    "f": 0.6,
     "kcal": 150,
-    "unit": "g",
+    "unit": "u",
     "fam": "LIPID",
     "sub": "FRUIT_FAT"
   },
@@ -317,5 +317,27 @@
     "unit": "g",
     "fam": "VEG",
     "sub": "GREEN"
-  }
+  },
+  { 
+  "id": 32, 
+  "name": "Cerdo Graso (Costilla/Secreto)", 
+  "p": 16.0, 
+  "c": 0.0, 
+  "f": 25.0, 
+  "kcal": 290, 
+  "unit": "g", 
+  "fam": "PROTEIN", 
+  "sub": "MEAT_RED" 
+  },
+  { 
+  "id": 34, 
+  "name": "Cerdo Magro (Lomo/Solomillo)", 
+  "p": 21.0, 
+  "c": 0.0, 
+  "f": 3.5, 
+  "kcal": 120, 
+  "unit": "g", 
+  "fam": "PROTEIN", 
+  "sub": "MEAT_RED" 
+}
 ]

@@ -3,10 +3,10 @@
     "label": "Carnes, Pescados y Huevos",
     "icon": "🥩",
     "subs": {
-      "MEAT_RED": { "label": "Carnes Rojas / Procesados", "icon": "🍖" },
+      "MEAT_RED": { "label": "Carnes Rojas/Procesados", "icon": "🍖" },
       "MEAT_WHITE": { "label": "Aves y Magras", "icon": "🍗" },
       "FISH_WHITE": { "label": "Pescado Blanco", "icon": "🐟" },
-      "FISH_BLUE": { "label": "Pescado Azul", "icon": "🍣" },
+      "FISH_BLUE": { "label": "Pescado Azul", "icon": "🐟" },
       "EGG": { "label": "Huevos", "icon": "🥚" }
     }
   },
