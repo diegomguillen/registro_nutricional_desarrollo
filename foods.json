@@ -350,5 +350,16 @@
   "unit": "u", 
   "fam": "VEG", 
   "sub": "COLOR" 
+  },
+  { 
+  "id": 36, 
+  "name": "Remolacha (Cruda)", 
+  "p": 1.6, 
+  "c": 9.6, 
+  "f": 0.2, 
+  "kcal": 43, 
+  "unit": "g", 
+  "fam": "VEG", 
+  "sub": "ROOT" 
   }
 ]
