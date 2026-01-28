@@ -485,6 +485,8 @@
         //////////////
         let globalLog = []; 
         let recipeData = []; 
+        let foodData = [];
+        let FOOD_STRUCTURE = {};
         let chartInstance = null;
         let chartInstanceYesterday = null;
         let chartInstanceLastWeek = null;
@@ -562,8 +564,6 @@
             }
             //
             initApp();
-            populateSelect();
-            populateRecipeSelect();
             initDateInputs();
             
             document.getElementById('foodSelect').addEventListener('change', updatePreview);
